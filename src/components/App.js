@@ -1,5 +1,6 @@
 import React, { Component, useState } from "react";
 import "./../styles/App.css";
+import CityList from "./CityList";
 
 // Do not alter the states const and values inside it.
 const states = [
@@ -155,7 +156,25 @@ const states = [
 ];
 
 function App() {
-  return <div id="main"></div>;
+  const [getState, setState] = useState(0);
+  return <div id="main">
+    <ul>
+      {states.map((state, index) => 
+        <div>
+          <li id={`state+${index+1}`} className="clickItem" onClick={() => {
+            if (getState === state.name) {
+              setState(1)
+            } else {
+              setState(state.name)
+            }
+          }}>{state.name}</li>
+          {getState === state.name && <CityList cityList={state.cities}/>}
+        </div>
+      )
+        
+      }
+    </ul>
+  </div>;
 }
 
 export default App;
