@@ -7,7 +7,7 @@ const TownList = ({townList}) => {
         <ul>
             {townList.map((Town, index) =>
                 <div>
-                    <li id={`town - +${index+1}`} className="clickItem">{Town.name}</li>
+                    <li id={"town"+(index+1)} className="clickItem">{Town.name}</li>
                 </div>
             )
             }

@@ -161,7 +161,8 @@ function App() {
     <ul>
       {states.map((state, index) => 
         <div>
-          <li id={`state+${index+1}`} className="clickItem" onClick={() => {
+          <li id={"state"+(index+1)} className="clickItem" onClick={() => {
+            
             if (getState === state.name) {
               setState(1)
             } else {
