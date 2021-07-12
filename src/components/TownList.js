@@ -7,7 +7,7 @@ const TownList = ({townList}) => {
         <ul>
             {townList.map((Town, index) =>
                 <div>
-                    <li id={`Town+${index+1}`} className="clickItem" onClick={() => {
+                    <li id={`town+${index+1}`} className="clickItem" onClick={() => {
                         if (getTown === Town.name) {
                             setTown(1)
                         } else {
